@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 
 function Message(props) {
-  return <div>{props.text}</div>;
+  var col = props.color;
+  return <div style={{ backgroundColor: col }}>{props.text}</div>;
 }
 
 export default Message;

@@ -5,11 +5,62 @@ import Box2 from './Box2';
 import Box3 from './Box3';
 import Box4 from './Box4';
 import Message from './message';
+import Widget1 from './Widget1';
 
 const Home = () => {
+  var i = 0;
   const [boxtype, setBoxtype] = useState('Box1');
-  const [content, setContent] = useState('sdgdsgsdg');
-  useEffect(() => {}, [content]);
+  const [content, setContent] = useState('');
+  const user_data = [
+    {
+      data: 'hello',
+      isme: true,
+    },
+    {
+      data: 'hello424',
+      isme: false,
+    },
+    {
+      data: 'hello24',
+      isme: true,
+    },
+    {
+      data: 'hello2',
+      isme: false,
+    },
+  ];
+  // useEffect(() => {
+  //   console.log(user_data);
+  // }, [user_data]);
+
+  const addfront = async () => {
+    const data = [
+      {
+        isme: true,
+        data: content,
+      },
+    ];
+    setContent('');
+
+    // console.log(data[0]);
+    await user_data.push(data[0]);
+    console.log(user_data);
+  };
+  const addback = async () => {
+    const data = [
+      {
+        isme: false,
+        data: content,
+      },
+    ];
+    setContent('');
+    // console.log(data);
+
+    await user_data.push(data[0]);
+    console.log(user_data);
+
+    // user_data.append(data[0]);
+  };
   return (
     <Container>
       <div
@@ -79,19 +130,35 @@ const Home = () => {
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                   <Form.Control
                     type="text"
+                    value={content}
                     placeholder="Enter your message"
                     onChange={(e) => setContent(e.target.value)}
                   />
                 </Form.Group>
               </Col>
               <Col>
-                <Button variant="info">Send</Button>
+                <Button variant="info" onClick={() => addfront()}>
+                  Send
+                </Button>
+
+                <Button variant="danger" onClick={() => addback()}>
+                  Send
+                </Button>
               </Col>
             </Row>
           </Col>
         </Row>
       </div>
-      <Message text={content} />
+      <div>
+        {user_data.map((data) => {
+          if (data.isme) {
+            var col = 'red';
+          } else {
+            var col = 'blue';
+          }
+          return <Message text={data.data} color={col} />;
+        })}
+      </div>
     </Container>
   );
 };
