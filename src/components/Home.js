@@ -17,7 +17,7 @@ const Home = () => {
       isme: true,
     },
     {
-      data: 'hello424',
+      data: ' hello424 hello424 hello424 hello424 hello424 hello424 hello424 hello424 hello424',
       isme: false,
     },
     {
@@ -28,6 +28,93 @@ const Home = () => {
       data: 'hello2',
       isme: false,
     },
+    {
+      data: 'hello24',
+      isme: true,
+    },
+    {
+      data: 'hello2',
+      isme: false,
+    },
+    {
+      data: 'hello24',
+      isme: true,
+    },
+    {
+      data: 'hello2',
+      isme: false,
+    },
+    {
+      data: 'hello24',
+      isme: true,
+    },
+    {
+      data: 'hello2',
+      isme: false,
+    },
+    {
+      data: 'hello24',
+      isme: true,
+    },
+    {
+      data: 'hello2',
+      isme: false,
+    },
+    {
+      data: 'hello24',
+      isme: true,
+    },
+    // {
+    //   data: 'hello2',
+    //   isme: false,
+
+    //   data: 'hello24',
+    //   isme: true,
+    // },
+    // {
+    //   data: 'hello2',
+    //   isme: false,
+    // },
+    // {
+    //   data: 'hello24',
+    //   isme: true,
+    // },
+    // {
+    //   data: 'hello2',
+    //   isme: false,
+    // },
+    // {
+    //   data: 'hello24',
+    //   isme: true,
+    // },
+    // {
+    //   data: 'hello2',
+    //   isme: false,
+    // },
+    // {
+    //   data: 'hello24',
+    //   isme: true,
+    // },
+    // {
+    //   data: 'hello2',
+    //   isme: false,
+    // },
+    // {
+    //   data: 'hello24',
+    //   isme: true,
+    // },
+    // {
+    //   data: 'hello2',
+    //   isme: false,
+    // },
+    // {
+    //   data: 'hello24',
+    //   isme: true,
+    // },
+    // {
+    //   data: 'hello2',
+    //   isme: false,
+    // },
   ];
   // useEffect(() => {
   //   console.log(user_data);
@@ -63,7 +150,7 @@ const Home = () => {
   };
   return (
     <Container>
-      <div
+      {/* <div
         style={{
           marginTop: '20%',
           marginleft: '40%',
@@ -148,16 +235,75 @@ const Home = () => {
             </Row>
           </Col>
         </Row>
-      </div>
-      <div>
+      </div> */}
+
+      {/* <div
+        style={{
+          width: '300px',
+          border: '2px black solid',
+          height: '200px',
+          overflowY: 'scroll',
+        }}
+      >
+        <p>
+          lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem
+          lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem
+          lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem
+          lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem
+          lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem
+          lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem
+          lorem lorem lorem lorem lorem lorem lorem
+        </p>
+      </div> */}
+      <div
+        style={{
+          margin: '10px',
+          width: '40%',
+          borderRadius: '5%',
+          border: '2px black solid',
+          height: '80vh',
+          overflowY: 'scroll',
+          backgroundColor: '#EAEEF3',
+          padding: '10px',
+        }}
+      >
+        {/* <center> */}
+        {/* <Col> */}
         {user_data.map((data) => {
           if (data.isme) {
+            var border = '0px 20px 20px 20px';
+            var pos = 'left';
             var col = 'red';
           } else {
             var col = 'blue';
+            var pos = 'right';
+            var border = '20px 0px 20px 20px';
           }
-          return <Message text={data.data} color={col} />;
+          return (
+            <Message text={data.data} color={col} border={border} pos={pos} />
+          );
         })}
+        {/* </Col> */}
+        {/* </center> */}
+      </div>
+      {/* overflow-y: scroll; */}
+      <div style={{ width: '80%', height: '500px', overflowY: 'scroll' }}>
+        <Col>
+          {user_data.map((data) => {
+            if (data.isme) {
+              var border = '0px 20px 20px 20px';
+              var col = 'red';
+            } else {
+              var col = 'blue';
+              var border = '20px 0px 20px 20px';
+            }
+            return (
+              <Row>
+                <Message text={data.data} color={col} border={border} />;
+              </Row>
+            );
+          })}
+        </Col>
       </div>
     </Container>
   );
