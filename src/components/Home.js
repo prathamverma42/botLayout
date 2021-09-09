@@ -1,67 +1,68 @@
-import React, { useState, useEffect } from 'react';
-import { Button, Container, Row, Col, Form } from 'react-bootstrap';
-import Box1 from './Box1';
-import Box2 from './Box2';
-import Box3 from './Box3';
-import Box4 from './Box4';
-import Message from './message';
-import Widget1 from './Widget1';
+import React, { useState, useEffect } from "react";
+import { Button, Container, Row, Col, Form } from "react-bootstrap";
+import Box1 from "./Box1";
+import Box2 from "./Box2";
+import Box3 from "./Box3";
+import Box4 from "./Box4";
+import Message from "./message";
+import Widget1 from "./Widget1";
 
 const Home = () => {
   var i = 0;
-  const [boxtype, setBoxtype] = useState('Box1');
-  const [content, setContent] = useState('');
+  const [show, setShow] = useState(false);
+  const [boxtype, setBoxtype] = useState("Box1");
+  const [content, setContent] = useState("");
   const user_data = [
     {
-      data: 'hello',
+      data: "hello",
       isme: true,
     },
     {
-      data: ' hello424 hello424 hello424 hello424 hello424 hello424 hello424 hello424 hello424',
+      data: " hello424 hello424 hello424 hello424 hello424 hello424 hello424 hello424 hello424",
       isme: false,
     },
     {
-      data: 'hello24',
+      data: "hello24",
       isme: true,
     },
     {
-      data: 'hello2',
+      data: "hello2",
       isme: false,
     },
     {
-      data: 'hello24',
+      data: "hello24",
       isme: true,
     },
     {
-      data: 'hello2',
+      data: "hello2",
       isme: false,
     },
     {
-      data: 'hello24',
+      data: "hello24",
       isme: true,
     },
     {
-      data: 'hello2',
+      data: "hello2",
       isme: false,
     },
     {
-      data: 'hello24',
+      data: "hello24",
       isme: true,
     },
     {
-      data: 'hello2',
+      data: "hello2",
       isme: false,
     },
     {
-      data: 'hello24',
+      data: "hello24",
       isme: true,
     },
     {
-      data: 'hello2',
+      data: "hello2",
       isme: false,
     },
     {
-      data: 'hello24',
+      data: "hello24",
       isme: true,
     },
     // {
@@ -127,7 +128,7 @@ const Home = () => {
         data: content,
       },
     ];
-    setContent('');
+    setContent("");
 
     // console.log(data[0]);
     await user_data.push(data[0]);
@@ -140,7 +141,7 @@ const Home = () => {
         data: content,
       },
     ];
-    setContent('');
+    setContent("");
     // console.log(data);
 
     await user_data.push(data[0]);
@@ -257,27 +258,27 @@ const Home = () => {
       </div> */}
       <div
         style={{
-          margin: '10px',
-          width: '40%',
-          borderRadius: '5%',
-          border: '2px black solid',
-          height: '80vh',
-          overflowY: 'scroll',
-          backgroundColor: '#EAEEF3',
-          padding: '10px',
+          margin: "10px",
+          width: "40%",
+          borderRadius: "5%",
+          border: "2px black solid",
+          height: "80vh",
+          overflowY: "scroll",
+          backgroundColor: "#EAEEF3",
+          padding: "10px",
         }}
       >
         {/* <center> */}
         {/* <Col> */}
         {user_data.map((data) => {
           if (data.isme) {
-            var border = '0px 20px 20px 20px';
-            var pos = 'left';
-            var col = 'red';
+            var border = "0px 20px 20px 20px";
+            var pos = "left";
+            var col = "red";
           } else {
-            var col = 'blue';
-            var pos = 'right';
-            var border = '20px 0px 20px 20px';
+            var col = "blue";
+            var pos = "right";
+            var border = "20px 0px 20px 20px";
           }
           return (
             <Message text={data.data} color={col} border={border} pos={pos} />
@@ -287,15 +288,15 @@ const Home = () => {
         {/* </center> */}
       </div>
       {/* overflow-y: scroll; */}
-      <div style={{ width: '80%', height: '500px', overflowY: 'scroll' }}>
+      <div style={{ width: "80%", height: "500px", overflowY: "scroll" }}>
         <Col>
           {user_data.map((data) => {
             if (data.isme) {
-              var border = '0px 20px 20px 20px';
-              var col = 'red';
+              var border = "0px 20px 20px 20px";
+              var col = "red";
             } else {
-              var col = 'blue';
-              var border = '20px 0px 20px 20px';
+              var col = "blue";
+              var border = "20px 0px 20px 20px";
             }
             return (
               <Row>

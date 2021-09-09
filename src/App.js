@@ -1,9 +1,10 @@
-import './App.css';
-import Home from './components/Home';
+import "./App.css";
+import Home from "./components/Home";
 
-import 'bootstrap/dist/css/bootstrap.min.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import Hom2 from "./components/Hom2";
 function App() {
-  return <Home />;
+  return <Hom2 />;
 }
 
 export default App;
